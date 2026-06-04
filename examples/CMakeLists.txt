@@ -1,2 +1,5 @@
 add_executable(event_loop_demo event_loop_demo.cpp)
 target_link_libraries(event_loop_demo PRIVATE reactor_http_kit)
+
+add_executable(reactor_shop_server reactor_shop_server.cpp)
+target_link_libraries(reactor_shop_server PRIVATE reactor_http_kit)

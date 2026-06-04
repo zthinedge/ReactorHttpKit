@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ReactorHttpKit 库存订单系统</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>ReactorHttpKit</h1>
+      <p>C++17 Reactor HTTP 库存订单演示</p>
+    </div>
+    <div class="server-pill" id="health">连接中</div>
+  </header>
+
+  <main class="layout">
+    <section class="panel auth-panel">
+      <div class="section-head">
+        <h2>账号</h2>
+        <span id="currentUser">未登录</span>
+      </div>
+      <div class="form-grid">
+        <input id="username" placeholder="用户名" autocomplete="username" value="demo">
+        <input id="password" placeholder="密码" type="password" autocomplete="current-password" value="demo">
+        <button id="loginBtn">登录</button>
+        <button id="registerBtn" class="secondary">注册</button>
+      </div>
+      <p class="hint">内置演示账号：demo / demo</p>
+    </section>
+
+    <section class="panel summary-panel">
+      <div class="section-head">
+        <h2>运行概览</h2>
+        <button id="refreshBtn" class="icon-button" title="刷新">↻</button>
+      </div>
+      <div class="metrics" id="metrics"></div>
+    </section>
+
+    <section class="panel products-panel">
+      <div class="section-head">
+        <h2>商品与库存</h2>
+        <span>下单会实时扣减库存</span>
+      </div>
+      <div class="product-grid" id="products"></div>
+    </section>
+
+    <section class="panel orders-panel">
+      <div class="section-head">
+        <h2>我的订单</h2>
+        <span id="orderCount">0 条</span>
+      </div>
+      <div class="orders" id="orders"></div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
